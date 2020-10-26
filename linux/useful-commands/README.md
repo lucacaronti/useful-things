@@ -12,7 +12,7 @@
         `$ pdfjam input.pdf --nup [col]x[row] --no-landscape --outfile output.pdf`
     * Convert PDF into grayscale
         ```
-        gs\
+        $ gs\
             -sOutputFile=output.pdf \
             -sDEVICE=pdfwrite \
             -sColorConversionStrategy=Gray \
@@ -22,3 +22,14 @@
             -dBATCH \
             input.pdf
         ```
+* #### Clean the system
+    * See which uninstalled packages there are in cache
+        `$ paccache -d` (to install this command do: `$ sudo pacman -S pacman-contrib`)
+    * Remove all pkg from cache except those installed
+        `$ sudo pacman -Sc `
+    * List unused packages
+        `$ sudo pacman -Qtdq`
+    * Remove unused packages
+        `$ sudo pacman -R (pacman -Qtdq)`
+    * Clean cache
+        `$ rm -rf ~/.cache/*`
